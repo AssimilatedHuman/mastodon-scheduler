@@ -28,8 +28,8 @@
 #   - MASTODON_TOKEN  (API token with write:statuses scope)
 #
 # CSV FORMAT:
-#   date,slot,text,posted
-#   2026-10-17T11:10,morning,Hello world,false
+#   timestamp,text,posted
+#   2026-10-17T11:10,Hello world,false
 #
 # POSTING:
 #   - Uses Mastodon API: POST /api/v1/statuses
@@ -85,9 +85,9 @@ for row in rows:
 
     # Parse timestamp
     try:
-        scheduled_time = datetime.fromisoformat(row["date"])
+        scheduled_time = datetime.fromisoformat(row["timestamp"])
     except Exception:
-        print(f"Invalid date format in row: {row}")
+        print(f"Invalid timestamp format in row: {row}")
         continue
 
     # Check if scheduled_time is inside the ±10 minute window
@@ -122,9 +122,8 @@ for row in rows:
 # Rewrite CSV with updated posted flags
 # ------------------------------------------------------------
 with open(CSV_PATH, "w", newline="", encoding="utf-8") as f:
-    writer = csv.DictWriter(f, fieldnames=["date", "slot", "text", "posted"])
+    writer = csv.DictWriter(f, fieldnames=["timestamp", "text", "posted"])
     writer.writeheader()
     writer.writerows(rows)
 
 print("Done.")
-
