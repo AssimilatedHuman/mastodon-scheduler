@@ -24,4 +24,4 @@ jobs:
           MASTODON_URL: ${{ secrets.MASTODON_BASE_URL }}
           MASTODON_TOKEN: ${{ secrets.MASTODON_ACCESS_TOKEN }}
         run: python scripts/post_mastodon.py
-
+# force cron refresh
