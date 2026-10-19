@@ -21,7 +21,7 @@ jobs:
 
       - name: Run script
         env:
-          MASTODON_URL: ${{ secrets.MASTODON_URL }}
-          MASTODON_TOKEN: ${{ secrets.MASTODON_TOKEN }}
+          MASTODON_URL: ${{ secrets.MASTODON_BASE_URL }}
+          MASTODON_TOKEN: ${{ secrets.MASTODON_ACCESS_TOKEN }}
         run: python scripts/post_mastodon.py
 
