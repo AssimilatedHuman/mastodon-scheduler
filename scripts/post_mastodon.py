@@ -4,8 +4,8 @@
 # PURPOSE:
 #   - Read content/mastodon.csv
 #   - Check each row's timestamp
-#   - If timestamp matches current UTC date + hour AND not posted,
-#     then post it to Mastodon.
+#   - If timestamp matches current UTC date within a ±3 hour window
+#     AND not posted, then post it to Mastodon.
 #   - Mark rows as posted instead of deleting them.
 #
 # WHY WE USE A 'posted' FLAG:
@@ -22,7 +22,7 @@
 #   - Current time = now (UTC)
 #   - Match rows where:
 #       row.timestamp.date() == now.date()
-#       row.timestamp.hour  == now.hour
+#       abs(row.timestamp.hour - now.hour) <= 3
 #
 # SECRETS:
 #   - MASTODON_URL    (base URL of your Mastodon instance)
@@ -62,7 +62,7 @@ current_date = now.date()
 current_hour = now.hour
 
 print(f"Current UTC time: {now}")
-print(f"Matching rows scheduled for {current_date} at hour {current_hour}")
+print(f"Matching rows scheduled for {current_date} within ±3 hours of {current_hour}")
 
 # ------------------------------------------------------------
 # Read CSV rows
@@ -88,8 +88,8 @@ for row in rows:
         print(f"Invalid timestamp format in row: {row}")
         continue
 
-    # Match date + hour
-    if scheduled_time.date() == current_date and scheduled_time.hour == current_hour:
+    # Match date + ±3 hour window
+    if scheduled_time.date() == current_date and abs(scheduled_time.hour - current_hour) <= 3:
         print(f"POSTING: {row['text']} (scheduled for {scheduled_time})")
 
         try:
