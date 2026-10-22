@@ -21,8 +21,6 @@ jobs:
 
       - name: Run script
         env:
-          MASTODON_URL: ${{ secrets.MASTODON_BASE_URL }}
+          MASTODON_URL: https://mastodon.social
           MASTODON_TOKEN: ${{ secrets.MASTODON_ACCESS_TOKEN }}
         run: python scripts/post_mastodon.py
-# force cron refresh
-# force cron refresh again!
