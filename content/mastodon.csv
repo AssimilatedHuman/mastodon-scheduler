@@ -1,7 +1,5 @@
 timestamp,text,posted
-2026-10-22T15:00:00,"Many people are running into the same AI problems. The difference is that for some of them, these issues show up inside complex, expensive projects where mistakes have real consequences. (Evaluating & Testing AI Using Real-World Work. Link in bio.)",false
-2026-10-22T23:00:00,"LLM Inquisitor methodology gives people a way to recognise, test, describe, and communicate AI problems before they turn into unnecessary cost, delays, failures, or liability.(Evaluating & Testing AI Using Real-World Work. Link in bio.)",false
-2026-10-23T07:00:00,"Development teams need a more realistic understanding of what AI can and can’t do, especially when the tasks get complicated. (Evaluating & Testing AI Using Real-World Work. Link in bio.)",false
+2026-10-23T11:00:00,"Development teams need a more realistic understanding of what AI can and can’t do, especially when the tasks get complicated. (Evaluating & Testing AI Using Real-World Work. Link in bio.)",false
 2026-10-23T15:00:00,"This is the first formal methodology aimed at thoroughly testing AI by getting it to do the real work it’s supposed to be doing, inside real workflows, with real consequences.(Evaluating & Testing AI Using Real-World Work. Link in bio.)",false
 2026-10-23T23:00:00,Current AI prompt testing evaluates human prompt writing rather than the AI itself.(Evaluating & Testing AI Using Real-World Work. Link in bio.),false
 2026-10-24T07:00:00,Most AI testing today really tests a human's ability to write a convoluted prompt and another human's ability to guess what that prompt means -then deciding if the AI somehow met the hidden expectation. (Evaluating & Testing AI Using Real-World Work. Link in bio.),false
